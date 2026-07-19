@@ -5,10 +5,12 @@ import ffmpegPath from "ffmpeg-static";
 import fs from "fs";
 import path from "path";
 import os from "os";
+import cors from "cors";
 
 ffmpeg.setFfmpegPath(ffmpegPath);
 
 const app = express();
+app.use(cors());
 
 const upload = multer({
     storage: multer.memoryStorage()
